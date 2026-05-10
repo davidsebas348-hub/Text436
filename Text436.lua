@@ -77,7 +77,9 @@ carpeta.ChildRemoved:Connect(function()
     actualizarRoles()
 end)
 
-while true do
-    actualizarRoles()
-    task.wait(0.5)
-end
+task.spawn(function()
+    while true do
+        actualizarRoles()
+        task.wait(0.5)
+    end
+end)
